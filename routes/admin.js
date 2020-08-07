@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 const express = require("express");
 const router = express.Router();
 const routeRoot = require('../util/path')
@@ -7,8 +7,9 @@ const routeRoot = require('../util/path')
 const products= [];
 
 router.get("/add-product", (req, res, next) => {
-  console.log(" In another middelware");
-  res.sendFile(path.join(routeRoot,'views','add-product.html'))
+  // console.log(" In another middelware");
+  // res.sendFile(path.join(routeRoot,'views','add-product.html'))
+  res.render('add-product',{pageTitle:'Add Product',path:'/admin/add-product'})
 });
 
 router.post("/add-product", (req, res, next) => {
